@@ -1,14 +1,30 @@
 {
-  "name": "static-site",
+  "name": "readme-generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "This command-line interface (CLI) application prompts the user to answer questions and will generate a professional ReadMe file.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Joseph Polizzotto",
+  "license": "MIT",
   "dependencies": {
-    "inquirer": "^6.3.1"
-  }
+    "inquirer": "^8.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/polizoto/readMe-Generator.git"
+  },
+  "keywords": [
+    "readMe",
+    "gitHub",
+    "set-up",
+    "preparation",
+    "automation",
+    "command-line"
+  ],
+  "bugs": {
+    "url": "https://github.com/polizoto/readMe-Generator/issues"
+  },
+  "homepage": "https://github.com/polizoto/readMe-Generator#readme"
 }
