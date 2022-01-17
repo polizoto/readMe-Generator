@@ -1,7 +1,7 @@
 // Call required apps
 const inquirer = require('inquirer');
 
-const { writeFile, copyFile } = require('./utils/generate-readme.js');
+const writeFile = require('./utils/generate-readme.js');
 
 const generateReadme = require('./src/readMe-template.js');
 
@@ -9,6 +9,11 @@ const generateReadme = require('./src/readMe-template.js');
 const promptUser = () => {
 
     return inquirer.prompt([
+      {
+        type: 'input',
+        name: 'name',
+        message: 'What is your name?'
+      },
     {
       type: 'input',
       name: 'github',
@@ -16,7 +21,7 @@ const promptUser = () => {
     },
     {
       type: 'input',
-      name: 'name',
+      name: 'project',
       message: 'What is the name of your app / project?'
     },
     {
@@ -76,3 +81,5 @@ promptUser()
   .catch(err => {
     console.log(err);
   });
+
+  console.log(license);

@@ -1,7 +1,10 @@
-const generateLicense = license => {
+// const generateLicense = require('./license-template.js');
+
+const generateBadge = (license, name, github) => {
   if (!license) {
     return '';
   }
+  // generateLicense(license, name)
   return `
   https://img.shields.io/github/license/${name}/${github}
   `;
@@ -26,7 +29,7 @@ module.exports = markdownData => {
   return `
   ## ${name}
 
-  ${generateLicense(license)}
+  ${generateBadge(license, name, github)}
 
   ## Description
 
@@ -56,4 +59,3 @@ module.exports = markdownData => {
   ${page.contact}
   `;
 };
-
