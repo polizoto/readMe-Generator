@@ -9,11 +9,16 @@ const generateReadme = require('./src/readMe-template.js');
 const promptUser = () => {
 
     return inquirer.prompt([
-      {
-        type: 'input',
-        name: 'name',
-        message: 'What is the name of your app / project?'
-      },
+    {
+      type: 'input',
+      name: 'github',
+      message: 'What is your GitHub Username?'
+    },
+    {
+      type: 'input',
+      name: 'name',
+      message: 'What is the name of your app / project?'
+    },
     {
     type: 'input',
     name: 'description',
@@ -46,22 +51,28 @@ const promptUser = () => {
     },
     {
         type: 'input',
-        name: 'screenshot',
-        message: 'Enter the path where a screenshot is located:'
+        name: 'contact',
+        message: 'Enter your email address where users can contact you:'
     },
     {
-        type: 'input',
+        type: 'checkbox',
         name: 'license',
-        message: 'What is the license for your app?'
+        message: 'What is the license for your app?',
+        choices: ['MIT', 'Apache', 'GNU', 'Mozilla', 'Creative Commons']
     },
 ]);
 };
 
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-// function init() {}
-
-// Function call to initialize app
-promptUser();
+promptUser()
+  .then(readMeData => {
+    return generateReadme(readMeData);
+  })
+  .then(readMeFile => {
+    return writeFile(readMeFile);
+  })
+  .then(writeFileResponse => {
+    console.log(writeFileResponse);
+  })
+  .catch(err => {
+    console.log(err);
+  });
