@@ -2,7 +2,7 @@ const fs = require('fs');
 
 const writeLicense = licenseContent => {
     return new Promise((resolve, reject) => {
-      fs.writeFile('./dist/LICENSE', licenseContent, err => {
+      fs.writeFile('./LICENSE', licenseContent, err => {
         if (err) {
           reject(err);
           return;
