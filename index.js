@@ -5,6 +5,14 @@ const { writeFile } = require('./utils/generate-readme.js');
 
 const generateReadme = require('./src/readMe-template.js');
 
+const questions = [
+  {
+      type: 'input',
+      name: 'name',
+      message: "What's your name?",
+  },
+];
+
 // ReadMe Questions
 const promptUser = () => {
 

@@ -1,11 +1,10 @@
 
   ## DOCX-HTML
 
+  [![GitHub issues](https://img.shields.io/github/issues/polizoto/DOCX-HTML)](https://github.com/polizoto/DOCX-HTML/issues) [![GitHub forks](https://img.shields.io/github/forks/polizoto/DOCX-HTML)](https://github.com/polizoto/DOCX-HTML/network/members) [![GitHub stars](https://img.shields.io/github/stars/polizoto/DOCX-HTML)](https://github.com/polizoto/DOCX-HTML/stargazers) 
+  [![GitHub license](https://img.shields.io/github/license/polizoto/DOCX-HTML.svg)](https://github.com/polizoto/DOCX-HTML/blob/main/LICENSE.txt)
+   [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
   
-  ![GitHub license](https://img.shields.io/github/license/polizoto/DOCX-HTML.svg)
-  (https://github.com/polizoto/DOCX-HTML/blob/master/LICENCE)
-  
-
   ## Description
 
   turn docx files into HTML
@@ -19,17 +18,17 @@
   - [License](#license)
 
   ## Installation
-  node index
+  npm install docx-html
   ## Features
-  professional readme
+  add professional readME
   ## Usage
-  node index
+  ndoe index
   ## Contributing
-  add issues
+  git fork
   ## Tests
   undefined
   ## License
-   license
+  [Simplified BSD License license](https://github.com/polizoto/DOCX-HTML/blob/main/LICENSE.txt)
   ## Questions
   polizoto@hotmail.com
   

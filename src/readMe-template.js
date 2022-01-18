@@ -1,6 +1,6 @@
 const { writeLicense } = require('../utils/generate-license.js');
 
-const generateLicense = (license, name) => {
+const generateLicense = (license, github, name, project) => {
   let currentYear = new Date().getFullYear();
   if (!license) {
     return '';
@@ -229,18 +229,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   `
   }
   writeLicense(licenseText)
-  console.log(writeLicense)
-  return `${license} license`;
+  // console.log(writeLicense)
+  return `[${license}](https://github.com/${github}/${project}/blob/main/LICENSE.txt)`;
 };
 
 
 const generateBadge = (license, github, project) => {
   if (!license) {
-    return '';
+    return 'none';
   }
   return `
-  [![GitHub license](https://img.shields.io/github/license/${github}/${project}.svg)]
-  (https://github.com/${github}/${project}/LICENSE)
+  [![GitHub license](https://img.shields.io/github/license/${github}/${project}.svg)](https://github.com/${github}/${project}/blob/main/LICENSE.txt)
   `;
 };
 
@@ -263,8 +262,8 @@ module.exports = markdownData => {
   return `
   ## ${project}
 
-  ${generateBadge(license, github, project)}
-
+  [![GitHub issues](https://img.shields.io/github/issues/${github}/${project})](https://github.com/${github}/${project}/issues) [![GitHub forks](https://img.shields.io/github/forks/${github}/${project})](https://github.com/${github}/${project}/network/members) [![GitHub stars](https://img.shields.io/github/stars/${github}/${project})](https://github.com/${github}/${project}/stargazers) ${generateBadge(license, github, project)} [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+  
   ## Description
 
   ${page.description}
@@ -276,6 +275,7 @@ module.exports = markdownData => {
   - [Contributing](#contributing)
   - [Tests](#tests)
   - [License](#license)
+  - [Questions](#questions)
 
   ## Installation
   ${page.installation}
@@ -288,7 +288,7 @@ module.exports = markdownData => {
   ## Tests
   ${page.tests}
   ## License
-  ${generateLicense(license, name)}
+  ${generateLicense(license, github, name, project)}
   ## Questions
   ${page.contact}
   `;
