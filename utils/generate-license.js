@@ -1,20 +1,20 @@
 const fs = require('fs');
 
-const writeFile = fileContent => {
+const writeLicense = licenseContent => {
     return new Promise((resolve, reject) => {
-      fs.writeFile('./dist/readme.md', fileContent, err => {
+      fs.writeFile('./dist/LICENSE', licenseContent, err => {
         if (err) {
           reject(err);
           return;
         }
         resolve({
           ok: true,
-          message: 'readMe file created!'
+          message: 'LICENSE file created!'
         });
       });
     });
   };
 
     module.exports = {
-        writeFile: writeFile,
+        writeLicense: writeLicense,
       };

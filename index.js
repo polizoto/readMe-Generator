@@ -1,7 +1,7 @@
 // Call required apps
 const inquirer = require('inquirer');
 
-const writeFile = require('./utils/generate-readme.js');
+const { writeFile } = require('./utils/generate-readme.js');
 
 const generateReadme = require('./src/readMe-template.js');
 
@@ -63,12 +63,12 @@ const promptUser = () => {
         type: 'checkbox',
         name: 'license',
         message: 'What is the license for your app?',
-        choices: ['MIT', 'Apache', 'GNU', 'Mozilla', 'Creative Commons']
+        choices: ['MIT', 'Apache', 'GNU', 'Modified BSD License', 'Simplified BSD License', 'Mozilla']
     },
 ]);
 };
 
-promptUser()
+  promptUser()
   .then(readMeData => {
     return generateReadme(readMeData);
   })
@@ -81,5 +81,3 @@ promptUser()
   .catch(err => {
     console.log(err);
   });
-
-  console.log(license);

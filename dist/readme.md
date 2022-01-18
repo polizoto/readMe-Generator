@@ -1,31 +1,35 @@
 
   ## DOCX-HTML
 
-  [![alt-text](https://img.shields.io/badge/Powered%20by-PostgreSQL-blue.svg)](https://github.com/polizoto)
+  
+  ![GitHub license](https://img.shields.io/github/license/polizoto/DOCX-HTML.svg)
+  (https://github.com/polizoto/DOCX-HTML/blob/master/LICENCE)
+  
 
-  This app will turn DOCX files into HTML
+  ## Description
+
+  turn docx files into HTML
 
   ## Table of Contents
   - [Installation](#installation)
   - [Features](#features)
   - [Usage](#usage)
-  - [Contribute](#contribute)
-  - [Feedback](#feedback)
-  - [Screenshot](#screenshot)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
   - [License](#license)
 
   ## Installation
-  npm install readMe-generator
+  node index
   ## Features
-  - add badges
+  professional readme
   ## Usage
-  type node index
-  ## Contribute
-  fork the project
-  ## Feedback
-  add an issue on github
-  ## Screenshot
-  my link
+  node index
+  ## Contributing
+  add issues
+  ## Tests
+  undefined
   ## License
-  MIT
+   license
+  ## Questions
+  polizoto@hotmail.com
   
