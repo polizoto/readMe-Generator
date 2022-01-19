@@ -1,6 +1,6 @@
 # readMe-Generator
 
-This node app prompts the user to answer questions about project / app and will produce a professional ReadMe file.
+This node app prompts the user to answer questions about a project / app and will produce a professional ReadMe file.
 
 ## Features
 
