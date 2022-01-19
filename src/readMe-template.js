@@ -257,38 +257,53 @@ module.exports = markdownData => {
   const { name, license, github, project, ...page } = markdownData;
 
   return `
-  ## ${project}
+## ${project}
 
-  [![GitHub issues](https://img.shields.io/github/issues/${github}/${project})](https://github.com/${github}/${project}/issues) [![GitHub forks](https://img.shields.io/github/forks/${github}/${project})](https://github.com/${github}/${project}/network/members) [![GitHub stars](https://img.shields.io/github/stars/${github}/${project})](https://github.com/${github}/${project}/stargazers) ${generateBadge(license, github, project)} [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-  
-  ${screenshot(page.screenshotName, project, github)}
+[![GitHub issues](https://img.shields.io/github/issues/${github}/${project})](https://github.com/${github}/${project}/issues) [![GitHub forks](https://img.shields.io/github/forks/${github}/${project})](https://github.com/${github}/${project}/network/members) [![GitHub stars](https://img.shields.io/github/stars/${github}/${project})](https://github.com/${github}/${project}/stargazers) ${generateBadge(license, github, project)} [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-  ## Description
+${screenshot(page.screenshotName, project, github)}
 
-  ${page.description}
+## Description
 
-  ## Table of Contents
-  - [Installation](#installation)
-  - [Features](#features)
-  - [Usage](#usage)
-  - [Contributing](#contributing)
-  - [Tests](#tests)
-  - [License](#license)
-  - [Questions](#questions)
+${page.description}
 
-  ## Installation
-  ${page.installation}
-  ## Features
-  ${page.features}
-  ## Usage
-  ${page.usage}
-  ## License
-  ${generateLicense(license, github, name, project)}
-  ## Contributing
-  ${page.contribute}
-  ## Tests
-  ${page.tests}
-  ## Questions
-  If you have any questions, feel free to [get in touch](mailto:${page.contact}).
-  `;
+## Table of Contents
+
+- [Installation](#installation)
+- [Features](#features)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [License](#license)
+- [Questions](#questions)
+
+## Installation
+
+${page.installation}
+
+## Features
+
+${page.features}
+
+## Usage
+
+${page.usage}
+
+## License
+
+${generateLicense(license, github, name, project)}
+
+## Contributing
+
+${page.contribute}
+
+## Tests
+
+${page.tests}
+
+## Questions
+
+If you have any questions, feel free to [get in touch](mailto:${page.contact}).
+
+`;
 };
