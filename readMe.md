@@ -34,3 +34,5 @@ The ReadMe file has the following structure:
 ![screenshot of readMe-Generator](/screenshot.jpg)
 
 ## Video Demo
+
+[Video Demonstration of Installation and Usage](https://www.dropbox.com/s/sasxhf7g3krl026/Readmegenerator-CC.mp4?dl=0)
