@@ -243,17 +243,14 @@ const generateBadge = (license, github, project) => {
   `;
 };
 
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-// function renderLicenseBadge(license) {}
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-// function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-// function renderLicenseSection(license) {}
+const screenshot = (image, app) => {
+  if (!image) {
+    return '';
+  }
+  return `
+  ![screenshot of ${app}](/${image})
+  `;
+};
 
 module.exports = markdownData => {
   // destructure page data by section
@@ -264,6 +261,8 @@ module.exports = markdownData => {
 
   [![GitHub issues](https://img.shields.io/github/issues/${github}/${project})](https://github.com/${github}/${project}/issues) [![GitHub forks](https://img.shields.io/github/forks/${github}/${project})](https://github.com/${github}/${project}/network/members) [![GitHub stars](https://img.shields.io/github/stars/${github}/${project})](https://github.com/${github}/${project}/stargazers) ${generateBadge(license, github, project)} [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
   
+  ${screenshot(page.screenshotName, project, github)}
+
   ## Description
 
   ${page.description}
@@ -283,13 +282,13 @@ module.exports = markdownData => {
   ${page.features}
   ## Usage
   ${page.usage}
+  ## License
+  ${generateLicense(license, github, name, project)}
   ## Contributing
   ${page.contribute}
   ## Tests
   ${page.tests}
-  ## License
-  ${generateLicense(license, github, name, project)}
   ## Questions
-  ${page.contact}
+  If you have any questions, feel free to [get in touch](mailto:${page.contact}).
   `;
 };

@@ -1,4 +1,5 @@
 node_modules/
 .DS_Store/
-dist/
+dist/README.md
 package-lock.json
+LICENSE

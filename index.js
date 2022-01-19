@@ -5,14 +5,6 @@ const { writeFile } = require('./utils/generate-readme.js');
 
 const generateReadme = require('./src/readMe-template.js');
 
-const questions = [
-  {
-      type: 'input',
-      name: 'name',
-      message: "What's your name?",
-  },
-];
-
 // ReadMe Questions
 const promptUser = () => {
 
@@ -51,7 +43,40 @@ const promptUser = () => {
         if (projectInfo) {
           return true;
         } else {
-          console.log('Please enter info abpout your project!');
+          console.log('Please enter info about your project!');
+          return false;
+        }
+      }
+    },
+    {
+      type: 'confirm',
+      name: 'screenshot',
+      message: 'Are you including a screenshot in your GitHub repo?',
+      validate: screenshot => {
+        if (screenshot) {
+          return true;
+        } else {
+          console.log('Please enter Y (Yes) or N (No)!');
+          return false;
+        }
+      }
+    },
+    {
+      type: 'input',
+      name: 'screenshotName',
+      message: 'What is the name and file extension of the screenshot file?',
+      when: ({ screenshot }) => {
+        if (screenshot) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      validate: screenshotName => {
+        if (screenshotName) {
+          return true;
+        } else {
+          console.log('Please the name of the screenshot file!');
           return false;
         }
       }
@@ -70,9 +95,9 @@ const promptUser = () => {
     }
     },
     {
-        type: 'input',
+        type: 'editor',
         name: 'installation',
-        message: 'How do you install the app (use ` around code)?',
+        message: 'How do you install the app? (Use GitHub Markdown)',
         validate: installInfo => {
           if (installInfo) {
             return true;
@@ -83,9 +108,9 @@ const promptUser = () => {
         }
     },
     {
-        type: 'input',
+        type: 'editor',
         name: 'features',
-        message: 'Briefly list the features of your app (use - before list items):',
+        message: 'Briefly list the features of your app (Use GitHub Markdown):',
         validate: featuresInfo => {
           if (featuresInfo) {
             return true;
@@ -96,53 +121,14 @@ const promptUser = () => {
         }
     },
     {
-        type: 'input',
+        type: 'editor',
         name: 'usage',
-        message: 'Briefly list the steps of how to use your app (use - before list items):',
+        message: 'Briefly list the steps of how to use your app (Use GitHub Markdown):',
         validate: usageInfo => {
           if (usageInfo) {
             return true;
           } else {
             console.log('Please enter info about how to use your app!');
-            return false;
-          }
-        }
-    },
-    {
-        type: 'input',
-        name: 'contribute',
-        message: 'How can users contribute to your project?',
-        validate: contributeInfo => {
-          if (contributeInfo) {
-            return true;
-          } else {
-            console.log('Please enter info about how people can contribute to your app!');
-            return false;
-          }
-        }
-    },
-    {
-        type: 'input',
-        name: 'feedback',
-        message: 'How can users give you feedback or add issues about your project?',
-        validate: feedbackInfo => {
-          if (feedbackInfo) {
-            return true;
-          } else {
-            console.log('Please enter how people can add feedback!');
-            return false;
-          }
-        }
-    },
-    {
-        type: 'input',
-        name: 'contact',
-        message: 'Enter your email address where users can contact you:',
-        validate: contactInfo => {
-          if (contactInfo) {
-            return true;
-          } else {
-            console.log('Please enter your contact info!');
             return false;
           }
         }
@@ -157,6 +143,45 @@ const promptUser = () => {
             return true;
           } else {
             console.log('Please enter info the license for your app!');
+            return false;
+          }
+        }
+    },
+    {
+        type: 'editor',
+        name: 'contribute',
+        message: 'How can users contribute to your project?',
+        validate: contributeInfo => {
+          if (contributeInfo) {
+            return true;
+          } else {
+            console.log('Please enter info about how people can contribute to your app!');
+            return false;
+          }
+        }
+    },
+    {
+        type: 'input',
+        name: 'tests',
+        message: 'How can users test your app?',
+        validate: feedbackInfo => {
+          if (feedbackInfo) {
+            return true;
+          } else {
+            console.log('Please enter info about how users can test your app!');
+            return false;
+          }
+        }
+    },
+    {
+        type: 'input',
+        name: 'contact',
+        message: 'Enter your email address where users can contact you:',
+        validate: contactInfo => {
+          if (contactInfo) {
+            return true;
+          } else {
+            console.log('Please enter your contact info!');
             return false;
           }
         }
