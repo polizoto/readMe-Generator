@@ -35,8 +35,4 @@ The ReadMe file has the following structure:
 
 ## Video Demo
 
-<<<<<<< HEAD
 <a href="https://www.dropbox.com/s/sasxhf7g3krl026/Readmegenerator-CC.mp4?dl=0" target="_blank">Video Demonstration of Installation and Usage</a>
-=======
-[Video Demonstration of Installation and Usage](https://www.dropbox.com/s/sasxhf7g3krl026/Readmegenerator-CC.mp4?dl=0)
->>>>>>> f6d8e7569ef6296c73b4d8a26e4a6c3a33aae574
