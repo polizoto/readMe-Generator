@@ -19,6 +19,16 @@ The ReadMe file has the following structure:
 - Tests
 - Contact
 
+## Installation
+
+- `npm install`
+
+## Usage
+
+- `node index`
+- answer the questions when prompted
+- the ReadMe.md file will be outputted to the `/dist/` directory
+
 ## ReadMe Example
 
 ![screenshot of readMe-Generator](/screenshot.jpg)
